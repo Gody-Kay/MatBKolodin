@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MAT.B KLODDIN - Modern Fashion E-Commerce Website">
+    <title>MAT.B KLODDIN - Shop Online Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>MAT.B KLODDIN</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="male.html">Male</a></li>
+                <li><a href="female.html">Female</a></li>
+                <li><a href="children.html">Children</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#cart" class="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(71, 85, 105, 0.5)), url('images/shared/herp.jpg') center/cover no-repeat;">
+        <div class="hero-content">
+            <h2>Welcome to MAT.B KLODDIN</h2>
+            <p>Discover stylish clothing and fashion pieces for every occasion</p>
+            <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+        </div>
+    </section>
+
+    <section class="collections">
+        <div class="container">
+            <h2>Shop by Collection</h2>
+            <div class="collection-grid">
+                <a class="collection-card" href="male.html">
+                    <h3>Male</h3>
+                    <p>Suits, African wear, and polished everyday style</p>
+                </a>
+                <a class="collection-card" href="female.html">
+                    <h3>Female</h3>
+                    <p>Elegant dresses, African wear, and fashion accessories</p>
+                </a>
+                <a class="collection-card" href="children.html">
+                    <h3>Children</h3>
+                    <p>Comfortable and adorable fashion for kids</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="category1">Category 1</option>
+                    <option value="category2">Category 2</option>
+                    <option value="category3">Category 3</option>
+                </select>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <div class="product-card">
+                    <img class="product-card-image clickable-image" src="images/shared/sleeveless-one-shoulder-top.jpeg" alt="Sleeveless One Shoulder Top">
+                    <div class="product-card-info">
+                        <span class="product-card-category">Female</span>
+                        <h3>Sleeveless One Shoulder Top</h3>
+                        <p class="product-card-price">₵89.99</p>
+                        <button class="btn btn-small btn-primary" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img class="product-card-image clickable-image" src="images/shared/unisex-fashion-collection.jpeg" alt="Unisex Fashion Collection">
+                    <div class="product-card-info">
+                        <span class="product-card-category">Featured</span>
+                        <h3>Unisex Fashion Collection</h3>
+                        <p class="product-card-price">₵125.00</p>
+                        <button class="btn btn-small btn-primary" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img class="product-card-image clickable-image" src="images/shared/stylish-casual-shirt.jpeg" alt="Stylish Casual Shirt">
+                    <div class="product-card-info">
+                        <span class="product-card-category">Male</span>
+                        <h3>Stylish Casual Shirt</h3>
+                        <p class="product-card-price">₵95.99</p>
+                        <button class="btn btn-small btn-primary" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img class="product-card-image clickable-image" src="images/shared/plus-size-elegant-maxi-dress.jpeg" alt="Plus Size Elegant Maxi Dress">
+                    <div class="product-card-info">
+                        <span class="product-card-category">Female</span>
+                        <h3>Plus Size Elegant Maxi Dress</h3>
+                        <p class="product-card-price">₵250.00</p>
+                        <button class="btn btn-small btn-primary" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img class="product-card-image clickable-image" src="images/shared/colorful-fashion-piece.jpeg" alt="Colorful Fashion Piece">
+                    <div class="product-card-info">
+                        <span class="product-card-category">Featured</span>
+                        <h3>Colorful Fashion Piece</h3>
+                        <p class="product-card-price">₵250.00</p>
+                        <button class="btn btn-small btn-primary" onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img class="product-card-image clickable-image" src="images/shared/premium-fashion-piece.jpeg" alt="Premium Fashion Piece">
+                    <div class="product-card-info">
+                        <span class="product-card-category">Premium</span>
+                        <h3>Premium Fashion Piece</h3>
+                        <p class="product-card-price">₵199.99</p>
+                        <button class="btn btn-small btn-primary" onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About MAT.B KLODDIN</h2>
+            <p>The owner of MAT.B KLODDIN is <strong>Matilda Batema</strong>, based in <strong>Ahenkro</strong>. She is passionate about bringing stylish, elegant, and quality fashion pieces to her customers with a personal touch and a strong sense of beauty and identity.</p>
+            <p>MAT.B KLODDIN is known for offering fashionable clothing and accessories that celebrate confidence, class, and everyday style.</p>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send on WhatsApp</button>
+                <p style="margin-top: 0.75rem; color: #5f6b7a;">You can also email us directly at <a href="mailto:boazorgodfred4@gmail.com">boazorgodfred4@gmail.com</a>.</p>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MAT.B KLODDIN. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: ₵<span id="cart-total">0.00</span></h3>
+            </div>
+            <button class="btn btn-primary">Checkout</button>
+        </div>
+    </div>
+
+    <div id="image-modal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img id="image-modal-image" src="" alt="Enlarged product image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
